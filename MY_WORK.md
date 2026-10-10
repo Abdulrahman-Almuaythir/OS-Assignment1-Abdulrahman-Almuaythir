@@ -33,7 +33,7 @@
 | **Student ID** | [445050211] |
 | **University Email** | [445050211]@std.psau.edu.sa |
 | **GitHub Username** | [Abdulrahman-Almuaythir] |
-| **Repository Link** | [https://github.com/Abdulrahman-Almuaythir/OS-Assignment1-Abdulrahman-Almuaythir.git] |
+| **Repository Link** | [https://github.com/Abdulrahman-Almuaythir/OS-Assignment1-Abdulrahman-Almuaythir] |
  
 ---
 
