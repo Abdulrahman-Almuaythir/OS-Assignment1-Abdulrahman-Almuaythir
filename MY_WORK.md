@@ -129,68 +129,84 @@
 
 ## Your Development Log
 
-### Entry 1 - [Date and Time]
-**What I did**:
+### Entry 1 - [October 2, 2026, 1:01 AM]
+**What I did**: Initialized the repository and configured my student ID
 
-**Details**:
+**Details**: Cloned the assigned GitHub repository locally to VS Code.
+Changed student ID on line 150 to my actual ID (445050211)
+Verified student ID output and basic project configuration.
+Committed changes with message: Update student ID.
 
-**Challenges**:
 
-**Solution**:
+**Challenges**: Git remote connection permission error when pushing.
 
-**Time spent**:
+**Solution**: Re-authenticated GitHub credentials via SSH key in VS Code terminal.
 
----
-
-### Entry 2 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+**Time spent**: 40 minutes
 
 ---
 
-### Entry 3 - [Date and Time]
-**What I did**:
+### Entry 2 - [October 7, 2026, 5:49 PM]
+**What I did**: Implemented Process Priority handling  (Feature 1)
 
-**Details**:
+**Details**: Added priority field and getter/setter methods to the process class.
+Modified process initialization to assign unique priority levels.
+Compiled and executed the program to verify priority-based scheduling output.
+Committed changes with message: Feature 1: Added priority field to Process class
 
-**Challenges**:
+**Challenges**: Priority values were not displaying properly in the console output. 
 
-**Solution**:
+**Solution**: Updated the process printing method to format and include the priority attribute.
 
-**Time spent**:
-
----
-
-### Entry 4 - [Date and Time]
-**What I did**:
-
-**Details**:
-
-**Challenges**:
-
-**Solution**:
-
-**Time spent**:
+**Time spent**: 1 hour
 
 ---
 
-### Entry 5 - [Date and Time]
-**What I did**:
+### Entry 3 - [October 10, 2026, 6:46 AM]
+**What I did**: Implemented Context Switch tracking (Feature 2)
 
-**Details**:
+**Details**: Added context switch counter logic in SchedulerSimulation.java.
+Updated thread execution loops to track every time the CPU switches execution between processes.
+Verified that the total context switches are correctly calculated and outputted at the end of execution.
+Committed changes with message: Feature 2: Implemented context switch counter
 
-**Challenges**:
+**Challenges**:Context switch count was incrementing incorrectly when processes re-entered the ready queue.
 
-**Solution**:
 
-**Time spent**:
+**Solution**: Traced thread execution steps and refined the counter increment condition to only trigger during actual process switches.
+**Time spent**: 1 hour
+
+---
+
+### Entry 4 - [October 10, 2026, 10:43 AM]
+**What I did**: Implemented Waiting Time calculation logic (Feature 3)
+
+**Details**: Added waiting time calculation tracking for each process during execution.
+Updated the console summary output to display individual and average waiting times.
+Verified simulation parameters and thread timing calculations.
+Committed changes with message: Feature 3: Added waiting time tracking and summary table
+
+**Challenges**: It took a lot of time to fully understand thread state transitions and correctly compute waiting times.
+
+**Solution**: Managed my time by dividing the task into smaller parts and reviewed core thread concurrency and synchronization concepts.
+
+**Time spent**: 3 hour
+
+---
+
+### Entry 5 - [October 10, 2026, 4:18 PM]
+**What I did**: Answered technical questions and completed reflection
+
+**Details**:Completed questions Q1-Q4 and summary in README.md.
+Filled out the reflection section in MY_WORK.md.
+Verified concepts related to Round-Robin scheduling and threads.
+Committed and pushed documentation updates.
+
+**Challenges**:Needed to refresh some information and review the solutions.
+
+**Solution**: Re-read lecture notes and reviewed the code logic.
+
+**Time spent**:2 hour
 
 ---
 
