@@ -29,17 +29,17 @@
 
 | Field | Your Answer |
 |-------|-------------|
-| **Full Name** | [Write your full name here] |
-| **Student ID** | [Write your student ID here] |
-| **University Email** | [yourid]@std.psau.edu.sa |
-| **GitHub Username** | [your-github-username] |
-| **Repository Link** | [Paste your repository link here] |
+| **Full Name** | [Abdulrahman Abdullah Almuaythir] |
+| **Student ID** | [445050211] |
+| **University Email** | [445050211]@std.psau.edu.sa |
+| **GitHub Username** | [Abdulrahman-Almuaythir] |
+| **Repository Link** | [https://github.com/Abdulrahman-Almuaythir/OS-Assignment1-Abdulrahman-Almuaythir.git] |
  
 ---
 
 ## 🎥 Video Link
 
-**Video Link**: [Paste your video link here]
+**Video Link**: [https://drive.google.com/file/d/1wngQe19U_GOmpFywko-czs46tjmlIYyr/view?usp=sharing]
 
 > ⚠️ **WARNING:** The video must be **publicly accessible** ("Anyone with the link can view") on **Google Drive**, **YouTube (Unlisted or Public)** or any other cloud file-sharing system. A private, restricted or broken link counts as a **missing video (-1 mark)**.
 >
@@ -227,13 +227,13 @@ Committed and pushed documentation updates.
 
 > 💡 **TIP:** Fill this in **last**, after all entries are written.
 
-**Total time spent on assignment**: [X hours]
+**Total time spent on assignment**: [8 hours]
 
-**Most challenging part**:
+**Most challenging part**:Feature 3
 
-**Most interesting learning**:
+**Most interesting learning**:Thread vs Process
 
-**What I would do differently next time**:
+**What I would do differently next time**:start the home work early
 
 ---
 
