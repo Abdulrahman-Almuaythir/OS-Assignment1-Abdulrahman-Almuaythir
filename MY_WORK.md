@@ -237,7 +237,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[This assignment gave me an insight into the structure of the Java language, and the way in which tasks can be distributed using the Runnable and Thread classes. I discovered that I could launch separate tasks using the Thread.start method, and that I needed to use the Thread method join in order to get the program to wait until the task had completed. Simulating CPU work by breaking down burst times into smaller steps using Thread.sleep helped me understand how round-robin time-sharing works in code. When I ran the program, I saw that the console message paused and resumed, as each process was brought to the front. I saw, too, that you can’t start a thread that has finished; I had to create a new one whenever an incomplete task came to the head of the queue. This exercise has allowed me to bring into practice the theory of parallel processes which we learn in class.]
 
 ## Question 2: What was the most challenging part of this assignment?
 
@@ -245,7 +245,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I found the most difficult part of this assignment to be the implementation of Feature 3, in which the elapsed waiting time and execution time for each thread is calculated. Because the Round Robin mechanism takes the processes in and out of the ready queue, calculating the waiting time is a more difficult task than a one-time calculation. I had to set the lastReadyTime of each process with a system.currentTimeMillis when it was created and again when it entered the ready list. It was also difficult to add up the waiting times inside the updateWaitingTime method without confusing the formula for the total execution time. Some of the processes would be incorrect and I had a lot of debugging to do. I also had to review my math skills. Making sure the final summary table printed all the aggregated numbers correctly at the end was really hard work.]
 
 ## Question 3: How did you overcome the challenges you faced?
 
@@ -253,7 +253,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[I passed this difficulty by the simple expedient of step-by-step testing and by the aid of debugging with simple println lines in my code. Whenever the output in the console looked out of sorts, I added System.out.println lines to see if the processes in the ready queue were moving around properly, and I re-read the assignment instructions carefully to be sure I understood what the Round Robin algorithm was supposed to be. Testing my code after every small change helped me catch mistakes early and correct them before they became bigger problems. Comparing my terminal output against the expected assignment requirements gave me confidence that the scheduler was running as intended. This step-by-step approach made it easy to correct logical errors and complete the assignment successfully.]
 
 ## Question 4: How can you apply multithreading concepts in real-world applications?
 
@@ -261,7 +261,7 @@
 
 **Your Answer:** *(5-7 sentences)*
 
-[Write your answer here.]
+[In the future, I would spend more time planning the code structure before I start writing classes. I would draw up a paper flowchart for the process's life-cycle and thread-queues first. Designing the timing metrics and different states of the process beforehand would have saved a lot of time on the later debugging of the calculations. I would also make smaller unit tests for methods like the waiting-time function, instead of testing everything with the simulation. Starting from a clearer framework, and testing small parts early on, it would have gone much more smoothly.]
 
 ### Optional: What would you like to learn more about?
 
@@ -293,7 +293,7 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[In this assignment, a ⁠Process⁠ is a simulated program represented by a custom Java class, while the actual execution and CPU scheduling are handled by real Java ⁠threads⁠. A process contains its own execution space, whereas threads exist inside a process and share its memory resources. We used threads because they are lighter to create than separate processes and they share memory, so the main thread and each process's thread can both access the same Process object. Specifically, in ⁠SchedulerSimulation.java⁠, the method ⁠addProcessToQueue()⁠ instantiates each simulated process by wrapping it in a real thread using the ⁠new Thread(process)⁠ line.]
 
 ## Question 2: Ready Queue Behavior
 
@@ -305,15 +305,17 @@
 
 **Your Answer:** *(3-5 sentences)*
 
-[Write your answer here.]
+[In Round-Robin scheduling, when a process cannot complete its execution within the assigned time quantum, it is temporarily paused and re-queued at the back of the ready queue. For instance, my process P14 started with a burst time of ⁠7393ms⁠ and required three execution cycles: it ran for its first ⁠3000ms⁠ quantum, yielded the CPU, ran for a second ⁠3000ms⁠ quantum, and finally executed its remaining ⁠1393ms⁠ before terminating. This re-queueing mechanism ensures fairness across the system by preventing long processes from monopolizing CPU time. Consequently, shorter processes like P1 and P2 were able to finish execution early without being delayed by P14.]
 
 Example from my output:
 ```
-[Paste a relevant snippet from your program output here showing a process being re-queued]
+[P14 completed quantum 3000ms | Remaining time: 4393ms
+  P14 yields CPU for context switch
+  P14 (Priority: 4) added to ready queue | Burst time: 7393ms]
 ```
 
 **Explanation of example:**
-[Explain what is happening in the output snippet you pasted.]
+[This snippet demonstrates P14 exceeding its ⁠3000ms⁠ time quantum while having ⁠4393ms⁠ remaining. As a result, the scheduler forces a context switch and places P14 back into the ready queue so other processes can receive CPU time.]
 
 ## Question 3: Thread Lifecycle
 
@@ -323,15 +325,15 @@ Example from my output:
 
 **Your Answer:** *(3-5 sentences overall; one short explanation per state)*
 
-1. **New**: [When is P1 in the New state?]
+1. **New**: [P1's thread is in the New state after ⁠new Thread(process)⁠ in ⁠addProcessToQueue()⁠ and before ⁠start()⁠ is called.]
 
-2. **Runnable**: [When does P1 become Runnable?]
+2. **Runnable**: [P1 enters this state when its thread starts via ⁠Thread.start()⁠ and runs its code]
 
-3. **Running**: [When is P1 Running?]
+3. **Running**: [Running: P1 runs directly on the CPU while executing its time quantum inside the ⁠run()⁠ method.]
 
-4. **Waiting**: [When and why would a thread be Waiting?]
+4. **Waiting**: [P1's thread enters Timed Waiting when it sleeps via ⁠Thread.sleep()⁠, while the main thread enters the Waiting state while waiting at ⁠Thread.join()⁠.]
 
-5. **Terminated**: [When is P1 Terminated?]
+5. **Terminated**: [The thread reaches Terminated when ⁠run()⁠ ends, which for P1 happens after its first quantum, right after ⁠P1 finished execution⁠ is printed.]
 
 ## Question 4: Real-World Applications
 
@@ -344,29 +346,29 @@ Example from my output:
 ### Example 1 (operating-system level): [Name of scenario]
 
 **Description**:
-[Describe the real-world scenario.]
+[(operating-system level): OS CPU Scheduling.]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[Operating systems use Round-Robin-style time slicing, often combined with priorities, to manage multiple programs running at the same time on a single CPU. It ensures fairness so no single heavy program freezes the system. Just like in my simulation where the time quantum was ⁠3000ms⁠ and processes like P14 yielded for other processes to run, the OS gives each program a small time slice. When a switch happens, the context switch saves the state of one program and loads another.]
 
 ### Example 2: [Name of application/scenario]
 
 **Description**:
-[Describe the real-world scenario or application.]
+[ (application level): Multi-Tasking Desktop Apps (Browser + Music Player)]
 
 **Why Round-Robin works well here**:
-[Fairness, responsiveness, predictability?]
+[A common real-world example is running a web browser while playing background music on a media player on your computer. Both applications run on different threads, and the OS shares the CPU between them in turns using Round-Robin principles. This ensures that a heavy webpage loading does not stutter or freeze your music playback, keeping the system smooth and fair for all running applications.]
 
 ## Summary
 
 **Key concepts I understood through these questions:**
-1.
-2.
-3.
+1 Round-Robin scheduling.
+2 Thread Lifecycle
+3 Processes vs.Threads.
 
 **Concepts I need to study more:**
-1.
-2.
+1 Context switching overhead.
+2 Thread synchronization.
 
 ---
 
